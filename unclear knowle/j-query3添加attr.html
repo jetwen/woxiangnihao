@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>attr</title>
+		<style type="text/css">
+			#fat {
+				height: 200px;
+				background: red;
+				background-image: url(不清楚的知识/img/diqiu/1.jpg);
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="fat" style="width: ;">
+			<div id="">
+
+			</div>
+			<div id="">
+
+			</div>
+			<div id="">
+
+			</div>
+		</div>
+
+		<div id="canSee" style="overflow: hidden">
+			<div id="fact">
+				<img src="不清楚的知识/img/diqiu/1.jpg" />
+				<img src="不清楚的知识/img/diqiu/2.jpg" />
+				<img src="不清楚的知识/img/diqiu/3.jpg" />
+				<img src="不清楚的知识/img/diqiu/4.jpg" />
+				<img src="不清楚的知识/img/diqiu/1.jpg" />
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var time1
+		var time2
+		var ko = 0
+		var fact = document.getElementById("fact");
+		//1  用j-query加属性
+		$("div").attr({
+			style: "width: 100px ;background: yellow;border: 2px solid green;"
+		})
+		/////////////////////////////////////////
+		$("div").children().each(function(i, v) {
+			//2  快速枚举法
+		})
+		///////////////////////
+
+		//3  解决计时器闪动的问题
+
+		//4   怎么找上一级
+		//5  同级
+		//6  同级直接写
+		var imagarr = [];
+		for(var i = 1; i <= 30; i++) {
+			imagarr[i] = new Image();
+			imagarr[i].src = "不清楚的知识/img/diqiu/" + i + ".jpg"
+		}
+
+		var t = 0;
+		setInterval(function() {
+			t++
+
+			$("#fat").attr({
+				style: "background-image:url(" + imagarr[t].src + ")"
+			})
+
+			if(t == 30) {
+				t = 0
+			}
+
+		}, 100)
+		//7 加fixed定位 需要把元素添加到body里面去 //因为有的插件相互排斥
+		var b = $("<div></div>");
+		b.attr({
+			style: "position:fixed; top:20px; left:50%;width:50px; height:50px;background:green"
+		})
+
+		$("body").append(b);
+		//8 用j-query做轮播图
+
+		$("#canSee").attr({
+			style: "width:500px;height:500px;border:2px solid green;overflow:hidden;margin:20px auto;position:relative"
+		})
+		$("#fact").attr({
+			style: "width:2500px;height:500px; font-size:0px;position:absolute;"
+		})
+
+		$("img").each(function(i, v) {
+			$(v).attr({
+				style: "width:500px;height:500px;"
+			})
+		});
+
+		time2 = setInterval(function() {
+			ko++
+			var t = 0;
+			var d = 10;
+			var b = $("#fact").position().left
+			var c = -500
+		
+						time1 = setInterval(function() {
+			
+							t++
+							$("#fact").css({
+								left: b + c / d * t + "px"
+							})
+			
+							if(t == d) {
+								clearInterval(time1)
+								t=0;
+								console.log(ko)
+								if(ko == 4) {
+												ko = 0;
+											$("#fact").css({
+												left:0
+											})
+										}
+								}	
+							}, 100)
+						
+			
+				}, 2000)
+	</script>
+
+</html>

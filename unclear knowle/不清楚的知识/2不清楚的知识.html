@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			正则表达式实际上是一个构造函数
+			
+			var ji  = new RegExp("^[0-9a-zA-Z]{1,}$");
+				参数一
+			ji /^[0-9a-zA-Z]{1,}$/;
+			{a}represent a g个字符串;
+			/*
+			 * 参数二:正则对象的属性
+			 * g:全局搜索
+			 * i:不区分大小写
+			 * m:多行搜索
+			 * 全局搜索:即使匹配到了对应的内容,也会继续搜索,知道字符串结束
+			 * 
+			 * 正则表达式的方法:
+			 * test()用于判断字符串是否满足对应的正则表达式,返回值为:boolean值,TRUE满足,FALSE不满足,
+			 * 
+			 */
+		-->
+		<!--
+			字符串的操作
+			search (正则对象):查找对象中是否含有正则对象匹配的子串,如果有,则返回第一次出现该子串的xia标,
+			如果没有,返回-1
+			match(正则对象):用来匹配指定的正则表达式的结果,并且以数组的形式返回匹配到的子串.
+			注:
+			1,
+			
+			
+		-->
+		<!--
+			构造函数的原型对象
+		-->
+		<!--
+			
+		-->
+	</body>
+	<script type="text/javascript">
+		function person(name,sex,age){
+			this.name=name||"松江"
+			this.sex=sex;
+			this.age=age;
+		}
+		person.prototype.eat=function(){
+			console.log("晚饭怎么吃")
+		}
+		person.prototype.drink=function(){
+			console.log("喝粥")
+		}
+		
+		function su(){
+			
+		}
+		su.prototype= new person();
+		var nu = new su();
+		
+		//方式一:原型链继承
+		//特点:简单粗暴的实现继承,非常纯粹的继承关系
+		//2,父类新增的属性和方法,子类都能访问到
+		//3,要想给子类添加
+		//
+		
+		//方式二
+		//1,可以实现多继承
+		//2,只能继承父类构造函数中的属性和方法,不能继承父类原型对象中的方法.
+		
+		
+		//方式3:
+		/*
+		 * 实例继承
+		 * 
+		 * 
+		 */
+		
+		function li(name,sex,age,sc){
+			var r =new person();
+			r.sc="2";
+			return r;
+		}
+		
+		
+		var sr = li("jij","ss","ss","44");
+		console.log(sr.sex)
+		
+		/*
+		 * 方式4:拷贝继承
+		 * 特点:
+		 * 1,支持多继承
+		 * 2,效率低,内存占用高
+		 * 3,无法获取父类中不可枚举的属性和方法
+		 * 4,
+		 */
+		//5
+		
+		function student(){
+			person.apply(this,[name,sex]);
+			
+		}
+		student.prototype= 
+		
+		//方式六寄生组合继承
+		function Student(name,sex,age,score){
+			Person.call(this,name,sex,age)
+			
+		}
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//方式二:构造继承
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

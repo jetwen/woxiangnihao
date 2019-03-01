@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>不清楚的知识</title>
+		<style type="text/css">
+			#one{
+				width: 50px;
+				height: 50px;
+				background: red;
+			}
+			#tow{
+				width: 50px;
+				height: 50px;
+				background: yellow;
+			}
+			#three{
+				width: 50px;
+				height: 50px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one">
+			
+		</div>
+		<div id="tow" style="background: ;">
+			
+		</div>
+		<div id="three">
+			
+		</div>
+		<button id="ni">sssssssss</button>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		//one怎么移除:remove
+		$("#one").on("click",mi)
+		function mi(){
+			$("div").remove("#tow");
+			
+			//tow:delay属性;//延迟动画
+//	 		$("#three").delay(200).hide(2000)
+	 		///////自定义动画//一个动画完成后,在执行另一个动画,
+	 	
+	 			$("#three").animate({
+	 				width:"300px"
+	 			},1000)
+	 			$("#three").animate({
+	 				height:"300px"
+	 			},1000)
+	 			
+	 			$("#three").animate({
+	 				width:"20px"
+	 			},1000)
+	 			
+	 			
+	 			$("#three").animate({
+	 				width:"10px"
+	 			},1000)
+	 			
+	 			//不能支持背景颜色
+	 			$("#three").animate({
+	 				background:"red"
+	 			},1000)
+	 		
+		}
+		////////////////////////
+		
+		$("#3").click(function(){
+			$("#three").stop(true,true)
+		})
+	
+		
+		
+		
+	
+		
+		
+	</script>
+</html>
